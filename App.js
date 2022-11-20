@@ -3,7 +3,7 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import * as Icons from "react-native-heroicons/solid";
+import * as Icons from "react-native-heroicons/outline";
 import { useNavigation } from '@react-navigation/native';
 import Application from './Application';
 
@@ -32,6 +32,13 @@ function SearchScreen() {
     </View>
   );
 }
+function FavScreen() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Favorite news!</Text>
+    </View>
+  );
+}
 
 const Tab = createBottomTabNavigator();
 
@@ -41,15 +48,15 @@ function App() {
       <Tab.Navigator>
         <Tab.Screen name="HomeScreen" component={Application}
           options={{
-            tabBarLabel: 'Home',
+            tabBarLabel: 'News',
             headerShown: false,
             tabBarIcon: ({ color, size, focused }) => {
               if (focused)
               {
-                return(<Icons.HomeIcon size={24} color="#000" />)
+                return(<Icons.NewspaperIcon size={24} color="#0099ee" />)
               } else {
                 return (
-                  <Icons.HomeIcon size={24} color="#aaa"/>
+                  <Icons.NewspaperIcon size={24} color="#aaa"/>
                 )
               }
     
@@ -62,9 +69,23 @@ function App() {
             tabBarIcon: ({ color, size, focused }) => {
               if (focused)
               {
-                return(<Icons.MagnifyingGlassIcon size={24} color="#000" />)
+                return(<Icons.MagnifyingGlassIcon size={24} color="#0099ee" />)
               } else {
                 return(<Icons.MagnifyingGlassIcon size={24} color="#aaa" />)
+              }
+              
+            }
+          }}
+        />
+        <Tab.Screen name="Fav" component={FavScreen}
+          options={{
+            tabBarLabel: 'Bookmarks',
+            tabBarIcon: ({ color, size, focused }) => {
+              if (focused)
+              {
+                return(<Icons.BookmarkIcon size={24} color="#0099ee" />)
+              } else {
+                return(<Icons.BookmarkIcon size={24} color="#aaa" />)
               }
               
             }
@@ -77,7 +98,7 @@ function App() {
               if (focused)
               {
                 return (
-                  <Icons.AdjustmentsVerticalIcon size={24} color="#000" />
+                  <Icons.AdjustmentsVerticalIcon size={24} color="#0099ee" />
                 )
               } else {
                  return (
