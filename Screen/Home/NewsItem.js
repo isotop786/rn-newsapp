@@ -8,14 +8,15 @@ const NewsItem = ({news}) => {
   return (
       <TouchableOpacity className="flex-1 my-2 p-2 bg-white flex-row rounded"
           onPress={() => navigate('NewsDetails', {
-            news
+            news : news
         })}
       >
           <View className="flex-1 mr-1">
-              <Text className="font-bold text-black"
+              <Text className="font-bold text-black mb-1"
                 style={{fontSize:16}}
-              >{news.title.substring(0,25)+"..."}</Text>
-              <Text>{news.description.substring(0, 70)+"..."}</Text>
+              >{news.title.substring(0, 25) + "..."}
+              </Text>
+              <Text className="text-xs">{news.description.substring(0, 100)+"..."}</Text>
           </View>  
           <View className="flex-1">
               <Image
