@@ -14,27 +14,16 @@ const NewsItem = ({news}) => {
           <View className="flex-1 mr-1">
               <Text className="font-bold text-black mb-1"
                 style={{fontSize:16}}
-              >{news.title.substring(0, 25) + "..."}
+              >{news.title?.substring(0, 25) + "..."}
               </Text>
-              <Text className="text-xs">{news.description.substring(0, 100)+"..."}</Text>
+              <Text className="text-xs">{news.description?.substring(0, 100)+"..."}</Text>
           </View>  
           <View className="flex-1">
-              {news.image ? (
               <Image
                   source={{ uri: news.image }}
                   className="h-28 w-52 rounded-sm"
                   resizeMode='contain'
               />
-              ) : 
-               (
-                <Image
-                  source={{ uri: "https://img.freepik.com/free-vector/breaking-news-concept_23-2148514216.jpg?" }}
-                  className="h-28 w-52 rounded-sm"
-                  resizeMode='contain'
-                />
-              )
-              }
-              
           </View>  
     </TouchableOpacity>
   )

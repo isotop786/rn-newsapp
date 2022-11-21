@@ -1,0 +1,188 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (./open/src/hotspot/share/memory/allocation.cpp:46), pid=55348, tid=31816
+#
+# JRE version:  (11.0.16+11) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (11.0.16+11-LTS-199, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Xmx64m -Xms64m -Dorg.gradle.appname=gradlew org.gradle.wrapper.GradleWrapperMain app:installDebug -PreactNativeDevServerPort=8081
+
+Host: Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz, 8 cores, 7G,  Windows 10 , 64 bit Build 19041 (10.0.19041.1889)
+Time: Mon Nov 21 13:06:56 2022 Bangladesh Standard Time elapsed time: 0.037201 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001ff34a3a000):  JavaThread "Unknown thread" [_thread_in_vm, id=31816, stack(0x000000da3bb00000,0x000000da3bc00000)]
+
+Stack: [0x000000da3bb00000,0x000000da3bc00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x62a3ea]
+V  [jvm.dll+0x76418f]
+V  [jvm.dll+0x765839]
+V  [jvm.dll+0x765ec3]
+V  [jvm.dll+0x23da98]
+V  [jvm.dll+0xb1494]
+V  [jvm.dll+0x2d6fa2]
+V  [jvm.dll+0x2d11f9]
+V  [jvm.dll+0x73e757]
+V  [jvm.dll+0x73ffef]
+V  [jvm.dll+0x346ef9]
+V  [jvm.dll+0x723f90]
+V  [jvm.dll+0x3b5adf]
+V  [jvm.dll+0x3b7bf1]
+C  [jli.dll+0x5207]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17034]
+C  [ntdll.dll+0x526a1]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000001ff32b991b0, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001ff34a4a000 GCTaskThread "GC Thread#0" [stack: 0x000000da3bc00000,0x000000da3bd00000] [id=16452]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff8e53dc560]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001ff34a37d50] Heap_lock - owner thread: 0x000001ff34a3a000
+
+Heap address: 0x00000000fc000000, size: 64 MB, Compressed Oops mode: Non-zero based: 0x00000000fc000000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff671f20000 - 0x00007ff671f2f000 	C:\Program Files\Java\jdk-11.0.16\bin\java.exe
+0x00007ff974190000 - 0x00007ff974388000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff972e50000 - 0x00007ff972f0d000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff971c30000 - 0x00007ff971efe000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff971f00000 - 0x00007ff972000000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff96ba90000 - 0x00007ff96baa5000 	C:\Program Files\Java\jdk-11.0.16\bin\VCRUNTIME140.dll
+0x00007ff96bab0000 - 0x00007ff96bac8000 	C:\Program Files\Java\jdk-11.0.16\bin\jli.dll
+0x00007ff973370000 - 0x00007ff97341e000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff9734c0000 - 0x00007ff97355e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff973420000 - 0x00007ff9734bc000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff9735e0000 - 0x00007ff973705000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff972f10000 - 0x00007ff9730b0000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff972110000 - 0x00007ff972132000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff9515d0000 - 0x00007ff95186a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ff973dd0000 - 0x00007ff973dfa000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff9719c0000 - 0x00007ff971acb000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff971920000 - 0x00007ff9719bd000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff96ac20000 - 0x00007ff96ac2a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff974120000 - 0x00007ff974150000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007e1100000000 - 0x00007e1100085000 	C:\Users\Maruf\Desktop\code\vendor\conemu-maximus5\ConEmu\ConEmuHk64.dll
+0x00007ff92f1d0000 - 0x00007ff92f26b000 	C:\Program Files\Java\jdk-11.0.16\bin\msvcp140.dll
+0x00007ff8e5100000 - 0x00007ff8e5c18000 	C:\Program Files\Java\jdk-11.0.16\bin\server\jvm.dll
+0x00007ff973dc0000 - 0x00007ff973dc8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ff958900000 - 0x00007ff958927000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff9451f0000 - 0x00007ff9451f9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff973cc0000 - 0x00007ff973d2b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff9700f0000 - 0x00007ff970102000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff96ba80000 - 0x00007ff96ba90000 	C:\Program Files\Java\jdk-11.0.16\bin\verify.dll
+0x00007ff96f4a0000 - 0x00007ff96f684000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ff94fdb0000 - 0x00007ff94fddc000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ff972050000 - 0x00007ff9720d2000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff96ba50000 - 0x00007ff96ba78000 	C:\Program Files\Java\jdk-11.0.16\bin\java.dll
+0x00007ff96ba40000 - 0x00007ff96ba4a000 	C:\Program Files\Java\jdk-11.0.16\bin\jimage.dll
+0x00007ff96b0d0000 - 0x00007ff96b0e6000 	C:\Program Files\Java\jdk-11.0.16\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-11.0.16\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;C:\Users\Maruf\Desktop\code\vendor\conemu-maximus5\ConEmu;C:\Program Files\Java\jdk-11.0.16\bin\server
+
+VM Arguments:
+jvm_args: -Xmx64m -Xms64m -Dorg.gradle.appname=gradlew 
+java_command: org.gradle.wrapper.GradleWrapperMain app:installDebug -PreactNativeDevServerPort=8081
+java_class_path (initial): C:\Users\Maruf\Desktop\code\react-native\newsApp\android\\gradle\wrapper\gradle-wrapper.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 67108864                                  {product} {command line}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 67108864                                  {product} {command line}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5836300                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122910970                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122910970                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-11.0.16\
+CLASSPATH=C:\Users\Maruf\Desktop\code\react-native\newsApp\android\\gradle\wrapper\gradle-wrapper.jar
+PATH=C:\Users\Maruf\Desktop\code\react-native\newsApp\android\node_modules\.bin;C:\Users\Maruf\Desktop\code\react-native\newsApp\node_modules\.bin;C:\Users\Maruf\Desktop\code\react-native\node_modules\.bin;C:\Users\Maruf\Desktop\code\node_modules\.bin;C:\Users\Maruf\Desktop\node_modules\.bin;C:\Users\Maruf\node_modules\.bin;C:\Users\node_modules\.bin;C:\node_modules\.bin;C:\Program Files\nodejs;C:\Users\Maruf\AppData\Local\Temp\yarn--1669014404362-0.4612762897322369;C:\Users\Maruf\Desktop\code\react-native\newsApp\node_modules\.bin;C:\Users\Maruf\AppData\Local\Yarn\Data\link\node_modules\.bin;C:\Program Files\libexec\lib\node_modules\npm\bin\node-gyp-bin;C:\Program Files\lib\node_modules\npm\bin\node-gyp-bin;C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Users\Maruf\Desktop\code\vendor\git-for-windows\cmd;C:\Users\Maruf\Desktop\code\vendor\conemu-maximus5\ConEmu\Scripts;C:\Users\Maruf\Desktop\code\vendor\conemu-maximus5;C:\Users\Maruf\Desktop\code\vendor\conemu-maximus5\ConEmu;C:\Program Files\Eclipse Adoptium\jdk-17.0.5.8-hotspot\bin;C:\Python310\Scripts\;C:\Python310\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\OracleDB\product\12.1.0\dbhome_1\bin;D:\app\Maruf\product\12.1.0\dbhome_1\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\Brackets\command;C:\xampp\php;C:\composer;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\PuTTY\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\xampp8.16\php;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\
+USERNAME=Maruf
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 165 Stepping 2, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 19041 (10.0.19041.1889)
+Hyper-V role detected
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 165 stepping 2 microcode 0xc8, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx, fma
+
+Memory: 4k page, system-wide physical 7993M (331M free)
+TotalPageFile size 38017M (AvailPageFile size 2M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 59M, peak: 60M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (11.0.16+11-LTS-199) for windows-amd64 JRE (11.0.16+11-LTS-199), built on Jun 28 2022 08:23:17 by "mach5one" with MS VC++ 15.9 (VS2017)
+
+END.

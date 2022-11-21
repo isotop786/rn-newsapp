@@ -4,6 +4,7 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as Icons from "react-native-heroicons/outline";
+import * as Solid from "react-native-heroicons/solid";
 import { useNavigation } from '@react-navigation/native';
 import Application from './Application';
 
@@ -53,7 +54,7 @@ function App() {
             tabBarIcon: ({ color, size, focused }) => {
               if (focused)
               {
-                return(<Icons.NewspaperIcon size={24} color="#0099ee" />)
+                return(<Solid.NewspaperIcon size={24} color="#0099ee" />)
               } else {
                 return (
                   <Icons.NewspaperIcon size={24} color="#aaa"/>
@@ -69,7 +70,7 @@ function App() {
             tabBarIcon: ({ color, size, focused }) => {
               if (focused)
               {
-                return(<Icons.MagnifyingGlassIcon size={24} color="#0099ee" />)
+                return(<Solid.MagnifyingGlassIcon size={24} color="#0099ee" />)
               } else {
                 return(<Icons.MagnifyingGlassIcon size={24} color="#aaa" />)
               }
@@ -83,7 +84,7 @@ function App() {
             tabBarIcon: ({ color, size, focused }) => {
               if (focused)
               {
-                return(<Icons.BookmarkIcon size={24} color="#0099ee" />)
+                return(<Solid.BookmarkIcon size={24} color="#0099ee" />)
               } else {
                 return(<Icons.BookmarkIcon size={24} color="#aaa" />)
               }
