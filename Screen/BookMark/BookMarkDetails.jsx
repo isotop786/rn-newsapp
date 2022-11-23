@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addBookMark } from '../../redux/actions/bookmarkAction';
 
 
-const NewsDetails = ({ route,navigation}) => {
+const BookMarkDetails = ({ route,navigation}) => {
   // console.log(route.params.news);
   const news = route.params.news;
   const {title,image} = route.params.news
@@ -55,15 +55,15 @@ const NewsDetails = ({ route,navigation}) => {
           )
       }
         
-        <TouchableOpacity className="items-end mb-1"
+        {/* <TouchableOpacity className="items-end mb-1"
           onPress={()=>addBookMarkItem()}
         >
           <Icons.BookmarkIcon size={22} color="#0077cc" />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <Text>{news.description}</Text>
       </ScrollView>
     </View>
   )
 }
 
-export default NewsDetails
+export default BookMarkDetails

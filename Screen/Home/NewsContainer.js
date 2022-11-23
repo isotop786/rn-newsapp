@@ -4,18 +4,46 @@ import { View, Text, ScrollView, SafeAreaView, } from 'react-native'
 import NewsItem from './NewsItem'
 import { news } from '../../localfile/news'
 // import { fetchNews } from '../../Services'
-import { NEWS_API,JSON_RESPONSE } from '../../Config'
-
+import { NEWS_API,JSON_RESPONSE,BUSINESS_NEWS,ENTERTAINMENT_NEWS,HEALTH_NEWS,SCIENCE_NEWS,SPORT_NEWS,TECH_NEWS } from '../../Config'
+import { useDispatch,useSelector } from 'react-redux'
+import { fetchNews } from './../../Services/index';
 
 const NewsContainer = () => {
     const [newsData, setNewsData] = useState();
+    const [source, setSource] = useState()
+    const dispatch = useDispatch();
+    const currentCate = useSelector(state => state.category.current_category)
+    const currentSource = useSelector(state => state.source.current_source)
 
-    const fetchNews = async () => {
+    console.log("Cureent source is: "+currentSource)
+
+
+     useEffect( () => {
+            // fetchNews();
+    async function fetchNewsAPI() {
+        
+        var category = '';
+
+        switch (currentCate)
+        {
+            case 'Business':
+                category = 'business'
+            case 'Tech':
+                category = 'technology'
+            case 'Health':
+                category = 'health'
+            case 'Entertainment':
+                category = 'entertainment'
+
+        }
+        console.log(category)
+        
         var data = []
-        const response = await fetch(JSON_RESPONSE)
+        // const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=2eefc3444c7b4ddf9a67690f8c3b121f`)
+        const response = await fetch(currentSource)
         const { articles } = await response.json()
         // console.log(articles)
-        articles.map(a => {
+         articles.map(a => {
             let title = '';
             let description = '';
             let image = '';
@@ -41,13 +69,12 @@ const NewsContainer = () => {
                 
             data.push({title, description,image})
         })
-        setNewsData(data)
-        return data.join();
-    }
-
-    useEffect(() => {
-        fetchNews()
-    },[])
+            setNewsData(data)
+         }
+         
+         fetchNewsAPI()
+        
+    },[currentSource])
 
   return (
     <ScrollView className="px-2">
