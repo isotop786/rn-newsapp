@@ -20,7 +20,7 @@ const BookMarkRoot = () => {
    <Stack.Navigator
           screenOptions={{
               headerStyle: {
-                 backgroundColor: "#0099ee",
+                 backgroundColor: "#4477dd",
               },
               headerTintColor: '#fff',
           }}

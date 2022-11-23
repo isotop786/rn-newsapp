@@ -17,28 +17,27 @@ const BookMarkScreen = () => {
         navigation.setOptions({
             title: "Bookmarks",
             headerStyle: {
-                backgroundColor:"#0099ee"
+                backgroundColor:"#4477dd"
             },
             headerTintColor:"#fff"
         })
     })
 
- 
-    return (
-        // <View>
-        //     <Text>Book Marks Screen</Text>    
-        // </View>
-      <ScrollView className="px-2"
-      >
+
+        
+     return(
+         <ScrollView className="px-2">
+            {bookMarks.length < 1 && (<Text className="pt-5 text-center font-bold">No Bookmark</Text>)}
           {bookMarks.map((bookMark, index) => {
               return (
-                  <BookMarkItem news={bookMark}/>
-                //    <Text key={index}>{bookMark.title}</Text>
+                  <BookMarkItem key={index} news={bookMark}/>
               )
           })
         }
-    </ScrollView>
-  )
+            </ScrollView>
+    )
+    
+
 }
 
 export default BookMarkScreen

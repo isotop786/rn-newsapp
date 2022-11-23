@@ -8,7 +8,8 @@ import * as Solid from "react-native-heroicons/solid";
 import { useNavigation } from '@react-navigation/native';
 import Application from './Application';
 import BookMarkRoot from './Screen/BookMark/BookMarkRoot';
-
+import SearchScreen from './Screen/Search/SearchScreen';
+import SettingScree from './Screen/Setting/SettingScree';
 
 
 function SettingsScreen() {
@@ -18,20 +19,7 @@ function SettingsScreen() {
     </View>
   );
 }
-function SearchScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Search!</Text>
-    </View>
-  );
-}
-function FavScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Favorite news!</Text>
-    </View>
-  );
-}
+
 
 const Tab = createBottomTabNavigator();
 
@@ -84,7 +72,7 @@ function Root() {
             }
           }}
         />
-        <Tab.Screen name="Setting" component={SettingsScreen}
+        <Tab.Screen name="Setting" component={SettingScree}
           options={{
             tabBarLabel: 'Setting',
             tabBarIcon: ({ color, size, focused }) => {
